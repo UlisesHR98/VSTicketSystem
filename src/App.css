@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+body {
+  background-color: #1ccda0 !important;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  overflow-y: auto;
+  max-width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #1ccda0 0%, #0fabbc 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  animation: waveAnimation 5s ease-in-out infinite alternate;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes waveAnimation {
   from {
-    transform: rotate(0deg);
+    transform: translateY(0);
   }
   to {
-    transform: rotate(360deg);
+    transform: translateY(-20px);
   }
+}
+
+/* Estilos para las tarjetas */
+.cards-container {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  min-height: 200px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  align-items: center;
 }

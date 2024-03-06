@@ -2,12 +2,32 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Departure from './routes/departure-searcher'
+import Client from './routes/search-client'
+import Seller from './routes/seller-view';
+import BusForm from './routes/create-buss';
+import AvailableBusses from './routes/available-busses';
 import reportWebVitals from './reportWebVitals';
+import SeatSelector from './routes/available-seats';
+import CustomerSearcher from './routes/customer-searcher';
+import {Route, Routes, BrowserRouter} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<App/>}/>
+        <Route exact path="/departure-searcher" element={<Departure/>}/>
+        <Route exact path="/search-client" element={<Client/>}/>
+        <Route exact path="/seller-view" element={<Seller/>}/>
+        <Route exact path="/available-busses" element={<AvailableBusses/>}/>
+        <Route exact path="/create-bus" element={<BusForm/>}/>
+        <Route exact path="/available-seats" element={<SeatSelector/>}/>
+        <Route exact path="/customer-searcher" element={<CustomerSearcher/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

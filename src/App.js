@@ -1,25 +1,44 @@
-import logo from './logo.svg';
 import './App.css';
+import "./components/CardsComponent/CardComponent.css"
+import CardComponent from "./components/CardsComponent/CardComponent"
+import { IoTicketOutline } from "react-icons/io5";
+import { FaBus, FaStoreAlt } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
+import Header from './components/HeaderComponent/HeaderComponent';
 
-function App() {
+const App = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick = (path) => {
+    navigate(path);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header title="Bienvenido"/>
+      <div className="cards-container">
+        <CardComponent
+          title="Buscar Salidas"
+          content="Buscar asientos disponibles para una fecha específica"
+          Icon={FaBus}
+          onClick={() => handleClick('/departure-searcher')}
+        />
+        <CardComponent
+          title="Buscar Cliente"
+          content="Buscar información de cliente con boleto comprado/apartado"
+          Icon={IoTicketOutline}
+          onClick={() => handleClick('/customer-searcher')}
+        />
+        <CardComponent
+          title="Crear Salida"
+          content="Agregar un autobus disponible para viajar en una fecha y destino específicos"
+          Icon={FaStoreAlt}
+          onClick={() => handleClick('/create-bus')}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;

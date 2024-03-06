@@ -1,0 +1,50 @@
+.departureSearchForm {
+  background-color: #1ccda0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+  min-width: 250px;
+}
+
+@media (max-width: 540px) {
+  .departureSearchForm {
+    margin: 20px;
+  }
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.formGroup input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #0da290;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0c8a7f;
+}

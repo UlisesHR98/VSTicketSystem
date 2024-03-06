@@ -1,0 +1,59 @@
+.form-busqueda {
+  background-color: #1ccda0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.form-busqueda label {
+  display: block;
+  margin-bottom: 5px;
+  color: white;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #1ccda0;
+  box-shadow: 0 0 5px rgba(28, 205, 160, 0.5);
+}
+
+.button-buscar {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color: #0da290;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-buscar:hover {
+  background-color: #19b58b;
+}
+
+/* Estilos para los resultados */
+.resultados {
+  margin-top: 20px;
+}
+
+.card-resultado {
+  background-color: #ffffff;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

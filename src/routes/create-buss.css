@@ -1,0 +1,87 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  position: relative;
+}
+  
+.form {
+  border: 8px solid #1ccda0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  background-color: #1ccda0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.form label {
+  display: block;
+  color: white;
+}
+
+.css-nxo287-MuiInputBase-input-MuiOutlinedInput-input {
+  border: 0px !important;
+  margin-bottom: 5px !important;
+}
+
+.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root{
+  padding-top: 5px !important;
+  padding-bottom: 0px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.css-z3c6am-MuiFormControl-root-MuiTextField-root{
+  padding-bottom: 10px !important;
+}
+
+.css-1laqsz7-MuiInputAdornment-root{
+  width: 60px !important;
+  padding-top: 10px;
+}
+
+.form input, .form select, .form button, .datePicker {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.form input:focus, .form select:focus, .datePicker:focus {
+  outline: none;
+  border-color: #1ccda0;
+}
+
+.form button {
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: block;
+  background-color: #0da290;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background-color: #0c8a7f;
+}
+
+.datePicker {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.react-datepicker-wrapper, .react-datepicker__input-container {
+  width: 100%;
+}

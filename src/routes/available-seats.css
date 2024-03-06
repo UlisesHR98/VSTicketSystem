@@ -1,0 +1,31 @@
+.form-style{
+    position: relative;
+}
+
+.seat-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    position: relative;
+}  
+  
+.seat {
+    width: 60px; /* Ajustado para acomodar el icono */
+    height: 60px; /* Ajustado para acomodar el icono */
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
+}
+  
+.seat.selected {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+  
