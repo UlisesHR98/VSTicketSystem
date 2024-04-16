@@ -15,7 +15,7 @@ const Departure = () => {
     desiredRoute: '',
   });
 
-  const apiUrl = 'http://127.0.0.1:8000/VDSTicketApp/bus/retrieve/';
+  const apiUrl = 'http://127.0.0.1:8000/VDSTicketApp/bus/';
 
   const fetchDataOnClick = async () =>{
     if (!searchParams.travelDate || !searchParams.numberOfTickets || !searchParams.desiredRoute){
