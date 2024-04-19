@@ -10,6 +10,8 @@ import AvailableBusses from './routes/available-busses';
 import reportWebVitals from './reportWebVitals';
 import SeatSelector from './routes/available-seats';
 import CustomerSearcher from './routes/customer-searcher';
+import Login from './routes/login';
+import Menu from './routes/menu';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -26,6 +28,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route exact path="/create-bus" element={<BusForm/>}/>
         <Route exact path="/available-seats" element={<SeatSelector/>}/>
         <Route exact path="/customer-searcher" element={<CustomerSearcher/>}/>
+        <Route exact path="/login" element={<Login/>}/>
+        <Route exact path="/menu" element={<Menu/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

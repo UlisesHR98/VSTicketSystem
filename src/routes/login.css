@@ -1,0 +1,74 @@
+.logo {
+  max-width: 450px;
+  min-width: 300px;
+  margin: auto;
+}
+
+.cards-container-reverse{
+  display: flex;
+  justify-content: center;
+  width: auto;
+  min-height: 200px;
+  margin-top: 20px;
+  position: relative;
+  z-index: 1;
+  align-items: center;
+  flex-wrap: wrap-reverse; 
+  
+}
+
+.header-main-login{
+  font-family: 'Permanent Marker', cursive;
+  color: black;
+  font-size: 30px;
+  padding: 10px;
+  position: relative;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+}
+
+.form-busqueda-login {
+  background-color: #1ccda0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  min-width: 400px;
+  margin: auto;
+  z-index: 1;
+  position: relative;
+}
+
+
+@media (max-width: 1330px) {
+  .logo{
+    max-width: 250px;
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+  .header-main-login{
+    font-family: 'Permanent Marker', cursive;
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-busqueda-login {
+    background-color: #1ccda0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    min-width: 200px;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+  }
+}
+
