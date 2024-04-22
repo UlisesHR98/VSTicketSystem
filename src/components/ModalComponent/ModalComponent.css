@@ -1,0 +1,17 @@
+.modal .btn-secondary {
+    background-color: #0da290;
+}
+
+.modal .btn-secondary:hover {
+    background-color: #0a7467;
+}
+
+.modal .btn-primary {
+    background-color: #188b7e;
+    border: 1px solid #085e54;
+}
+
+.modal .btn-primary:hover {
+    background-color: #053832;
+    border: 1px solid #085e54;
+}
