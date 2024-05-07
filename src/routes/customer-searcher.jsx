@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Header from '../components/HeaderComponent/HeaderComponent';
 import DatePicker from 'react-datepicker';
+import NavBar from "../components/NavBarComponent";
 
 const CustomerSearcher = () => {
     const [clientName, setClientName] = useState('');
@@ -9,7 +9,7 @@ const CustomerSearcher = () => {
 
     return (
         <div>
-            <Header title="Buscar pasajero" useBackButton='true'/>
+            <NavBar></NavBar>
             <div className="form-container">
                 <form  className="form">
                     <label htmlFor="clientName">Nombre del pasajero</label>

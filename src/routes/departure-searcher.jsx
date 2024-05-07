@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './departure-searcher.css';
-import Header from "../components/HeaderComponent/HeaderComponent"
 import axios from 'axios';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import NavBar from "../components/NavBarComponent";
+
 
 const Departure = () => {
   const navigate = useNavigate();
@@ -79,7 +80,7 @@ const Departure = () => {
 
   return (
     <div>
-      <Header title="Buscar salida" useBackButton='true'/>
+      <NavBar></NavBar>
       <form className="departureSearchForm">
         <div className="formGroup">
           <label htmlFor="travelDate">Fecha de Viaje:</label>

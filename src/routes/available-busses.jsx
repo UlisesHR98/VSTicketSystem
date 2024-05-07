@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Header from '../components/HeaderComponent/HeaderComponent';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
 import CardComponent from "../components/CardsComponent/CardComponent";
 import axios from 'axios';
 import Swal from 'sweetalert2'
+import NavBar from "../components/NavBarComponent";
 
 const AvailableBusses = () => {
   const { state } = useLocation();
@@ -75,7 +75,7 @@ const AvailableBusses = () => {
 
   return (
     <div>
-      <Header title="Salidas disponibles" useBackButton='true' />
+      <NavBar></NavBar>
       <div className="cards-container">
         {state.map(bus => (
           <CardComponent
