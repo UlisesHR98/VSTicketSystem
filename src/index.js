@@ -12,6 +12,10 @@ import SeatSelector from './routes/available-seats';
 import CustomerSearcher from './routes/customer-searcher';
 import Login from './routes/login';
 import Menu from './routes/menu';
+import ManagerView from './routes/manager-view';
+import MoneyView from './routes/money-view';
+import Reports from './routes/reports';
+import Diagrams from './routes/diagrams';
 import {Route, Routes, BrowserRouter} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -30,6 +34,10 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route exact path="/customer-searcher" element={<CustomerSearcher/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/menu" element={<Menu/>}/>
+        <Route exact path='/manager-view' element={<ManagerView/>}/>
+        <Route exact path='/money-view' element={<MoneyView/>}/>
+        <Route exact path='/reports' element={<Reports/>}/>
+        <Route exact path='/diagrams' element={<Diagrams/>}/>
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
