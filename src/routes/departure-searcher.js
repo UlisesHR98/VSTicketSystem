@@ -3,7 +3,7 @@ import './departure-searcher.css';
 import Header from "../components/HeaderComponent/HeaderComponent"
 import axios from 'axios';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
 const Departure = () => {
@@ -29,15 +29,19 @@ const Departure = () => {
       return;
     }
     setIsLoading(true);
-    axios.get(apiUrl,{
+    axios.get(apiUrl, {
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Token ' + localStorage.getItem('authToken')
+      },
       params:{
         travel_date:searchParams.travelDate,
         requested_seats:searchParams.numberOfTickets,
         requested_route:searchParams.desiredRoute,
+        
       }})
     .then(response => {
       setIsLoading(false);
-      debugger;
       navigate("/available-busses",{state: response.data});
     })
     .catch(error => {

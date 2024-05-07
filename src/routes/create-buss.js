@@ -40,7 +40,8 @@ const BusForm = () => {
             route: route,
         },{
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': 'Token ' + localStorage.getItem('authToken')
             }
           }).then(response => {
             setIsLoading(false);

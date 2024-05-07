@@ -1,0 +1,70 @@
+/* styles.css */
+.container {
+    background-color: #1ccda0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.ticket-form {
+    border: 8px solid #1ccda0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    min-width: 100px;
+    background-color: #1ccda0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    
+    margin: 0 auto;
+}
+
+.label {
+    color: white;
+    margin-bottom: 1px;
+}
+
+.error-label {
+    color: #803e3e !important;
+    font-size: small;
+    margin-bottom: -10px;
+}
+
+.input {
+    padding: 10px;
+    margin-bottom: 5px !important;
+    border-radius: 5px;
+    border: none;
+}
+
+.button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: #1ccda0;
+    cursor: pointer;
+}
+
+.button-disabled{
+    background-color: #6dc2ad !important;
+    pointer-events: none;
+}
+
+.ticket-form button {
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+    background-color: #0da290;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
