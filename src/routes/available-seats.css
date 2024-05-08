@@ -6,13 +6,13 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    padding: 20px;
+    padding: 5px;
     position: relative;
 }  
   
 .seat {
-    width: 60px; /* Ajustado para acomodar el icono */
-    height: 60px; /* Ajustado para acomodar el icono */
+    width: 50px !important; /* Ajustado para acomodar el icono */
+    height: 40px; /* Ajustado para acomodar el icono */
     background-color: #f0f0f0;
     border: 1px solid #ccc;
     cursor: pointer;
@@ -20,7 +20,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 0px !important;
     font-size: 14px; /* Ajusta el tamaño del texto si es necesario */
 }
   
@@ -28,4 +28,32 @@
     background-color: #4CAF50; /* Green */
     color: white;
 }
-  
+
+seat.reserved {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+/* styles.css */
+.background {
+    background-color: #12B2B6;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.nav-tabs .nav-link {
+    background-color: transparent !important;
+    color: #FFFFFF !important;
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+}
+
+.nav-tabs .nav-link.active {
+    border-bottom: solid 4px white !important;
+}

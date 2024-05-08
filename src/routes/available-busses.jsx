@@ -13,10 +13,16 @@ const AvailableBusses = () => {
 
   const handleClick = (id) => {
     setIsLoading(true);
-    axios.get(`http://127.0.0.1:8000/VDSTicketApp/bus/${id}/get_available_seats/`)
+    const apiUrl = `http://127.0.0.1:8000/VDSTicketApp/bus/${id}/get_available_seats/`
+    axios.get(apiUrl, {
+      headers:{
+        'Content-Type': 'application/json',
+        'Authorization': 'Token ' + localStorage.getItem('authToken')
+      }
+    })
       .then(response => {
         setIsLoading(false);
-        navigate("/available-seats");
+        navigate("/available-seats", {state: response.data});
       })
       .catch(error => {
         setIsLoading(false);
