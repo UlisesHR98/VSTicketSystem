@@ -31,6 +31,7 @@ const BusForm = () => {
     
     const handleSubmit = (e) => {
         e.preventDefault();
+        debugger;
         setIsLoading(true);
         const formattedDate = formatDateForBackend(tripDate);
         axios.post('http://127.0.0.1:8000/VDSTicketApp/bus/',{
