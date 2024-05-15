@@ -1,0 +1,46 @@
+.ticket{
+    border-style: dashed solid;
+    display: grid;
+    grid-template-columns: auto auto 100px ;
+    grid-template-rows:  auto auto;
+    width: 72mm;
+    height: 150mm;
+}
+
+.ticket-image{
+    max-width: 100px; 
+    max-height: 100px;
+    grid-column: 3;
+    rotate: 90deg;
+}
+
+.ticket-title{
+    display: flex;
+    grid-column: 3;
+    grid-row: 2;
+    justify-content: center;
+    writing-mode: vertical-rl;
+}
+
+.ticket-info{
+    grid-row: 2;
+    grid-column: 2;
+    display: flex;
+    flex-wrap: wrap;
+    writing-mode: vertical-rl;
+    font-size: 12px;
+}
+
+.ticket-info p{
+    margin-right: 0px;
+}
+
+.terms{
+    margin-right: 50px;
+    display: flex;
+    justify-content: center;
+    grid-column: 1;
+    grid-row: 2;
+    writing-mode: vertical-rl;
+    font-size: 12px;
+} 

@@ -1,3 +1,4 @@
+import React, { useRef } from 'react';
 import "../components/CardsComponent/CardComponent.css"
 import CardComponent from "../components/CardsComponent/CardComponent"
 import { IoTicketOutline, IoLogOut } from "react-icons/io5";
@@ -9,8 +10,19 @@ import { useState } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
-
+import Printer from '../components/TicketComponent/Printer';
+import TicketComponent from '../components/TicketComponent/ticketprinte';
 const Menu = () => {
+  const ticketData = {
+    fecha: '10/05/2024',
+    productos: [
+      { nombre: 'Producto 1', precio: 10 },
+      { nombre: 'Producto 2', precio: 20 },
+      { nombre: 'Producto 3', precio: 30 },
+    ],
+    total: 60,
+  };
+
 
   const navigate = useNavigate();
 
@@ -44,10 +56,17 @@ const Menu = () => {
       });
 
   };
+  const handlePrint = () => {
+    const printContent = componentRef.current.innerHTML;
+    const originalContent = document.body.innerHTML;
 
+    document.body.innerHTML = printContent;
+    window.print();
+    document.body.innerHTML = originalContent;
+  };
   const [openModal, setOpenModal] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
+  const componentRef = useRef();
   return (
     <div>
       <Header title="Bienvenido" />
@@ -76,6 +95,7 @@ const Menu = () => {
           Icon={IoLogOut}
           onClick={() => setOpenModal(true)}
         />
+        
         {setOpenModal && <Modal
           title="Atención"
           content="¿Seguro que quieres salir?"
@@ -85,6 +105,13 @@ const Menu = () => {
         />}
         {isLoading && <LoadingScreen />}
       </div>
+      {/* <div><Printer /></div> */}
+      <div>
+      <div ref={componentRef}>
+        <TicketComponent date="2024-05-20" customer="John Doe" />
+      </div>
+      <button onClick={handlePrint}>Imprimir Ticket</button>
+    </div>
     </div>
   );
 };
