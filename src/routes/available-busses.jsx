@@ -17,7 +17,7 @@ const AvailableBusses = () => {
     axios.get(apiUrl, {
       headers:{
         'Content-Type': 'application/json',
-        'Authorization': 'Token ' + localStorage.getItem('authToken')
+        // 'Authorization': 'Token ' + localStorage.getItem('authToken')
       }
     })
       .then(response => {
@@ -25,14 +25,28 @@ const AvailableBusses = () => {
         navigate("/available-seats", {state: response.data});
       })
       .catch(error => {
+        if (error.response.status === 401) {
+          Swal.fire({
+            title: "Sesión Expirada",
+            text: "La sesión ha expirado. Inicie sesión nuevamente.",
+            icon: "error",
+            iconColor: "#1ccda0",
+            confirmButtonColor: "#0da290",
+          }).then((result) => {
+            if (result.isConfirmed) {
+              navigate("/Login");
+            }
+          });
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: error.response.data.message,
+            icon: "error",
+            iconColor: "#1ccda0",
+            confirmButtonColor: "#0da290",
+          });
+        }
         setIsLoading(false);
-        Swal.fire({
-          title: "Error",
-          text: error.response.data.message,
-          icon: "error",
-          iconColor: "#1ccda0",
-          confirmButtonColor: "#0da290",
-        })
       });
   };
 
