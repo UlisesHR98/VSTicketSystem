@@ -21,11 +21,10 @@ const Menu = () => {
   const handleClickLogout = (path) => {
     setIsLoading(true);
     axios.post('http://127.0.0.1:8000/VDSTicketApp/logout/', {
-      username: 'wallc'
-    }, {
+      'refresh_token': localStorage.getItem('refresh_token')
+    },{
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': 'Token ' + localStorage.getItem('authToken')
       }
     }).then(response => {
       setIsLoading(false);
@@ -33,14 +32,18 @@ const Menu = () => {
       navigate(path);
     })
       .catch(error => {
+        if (error.response.status === 401) {
+          navigate("/Login");
+        } else {
+          Swal.fire({
+            title: "Error",
+            text: "No se pudo cerrar sesion",
+            icon: "error",
+            iconColor: "#1ccda0",
+            confirmButtonColor: "#0da290",
+          });
+        }
         setIsLoading(false);
-        Swal.fire({
-          title: "Error",
-          text: "No se pudo cerrar sesion",
-          icon: "error",
-          iconColor: "#1ccda0",
-          confirmButtonColor: "#0da290",
-        });
       });
 
   };

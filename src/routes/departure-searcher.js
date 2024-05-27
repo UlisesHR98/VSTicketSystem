@@ -32,7 +32,6 @@ const Departure = () => {
     axios.get(apiUrl, {
       headers:{
         'Content-Type': 'application/json',
-        'Authorization': 'Token ' + localStorage.getItem('authToken')
       },
       params:{
         travel_date:searchParams.travelDate,
@@ -45,13 +44,27 @@ const Departure = () => {
       navigate("/available-busses",{state: response.data});
     })
     .catch(error => {
-      Swal.fire({
-        title: "Error",
-        text: error.response.data.message,
-        icon: "error",
-        iconColor: "#1ccda0",
-        confirmButtonColor: "#0da290",
-      })
+      if (error.response.status === 401) {
+        Swal.fire({
+          title: "Sesión Expirada",
+          text: "La sesión ha expirado. Inicie sesión nuevamente.",
+          icon: "error",
+          iconColor: "#1ccda0",
+          confirmButtonColor: "#0da290",
+        }).then((result) => {
+          if (result.isConfirmed) {
+            navigate("/Login");
+          }
+        });
+      } else {
+        Swal.fire({
+          title: "Error",
+          text: error.response.data.message,
+          icon: "error",
+          iconColor: "#1ccda0",
+          confirmButtonColor: "#0da290",
+        });
+      }
       setIsLoading(false);
     });
   };
@@ -102,6 +115,7 @@ const Departure = () => {
         <button type="button" onClick={fetchDataOnClick}>Buscar Tickets</button>
       </form>
       {isLoading && <LoadingScreen/>}
+       
     </div>
   );
 };

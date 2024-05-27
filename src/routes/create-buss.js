@@ -7,8 +7,9 @@ import Header from '../components/HeaderComponent/HeaderComponent';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
 import Swal from 'sweetalert2';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
-import { TimePicker } from '@mui/x-date-pickers/TimePicker'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import { useNavigate } from 'react-router-dom';
 
 const BusForm = () => {
     const [busName, setBusName] = useState('');
@@ -17,6 +18,7 @@ const BusForm = () => {
     const [route, setRoute] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [tripTime, setTripTime] = useState('');
+    const navigate = useNavigate();
 
     const formatDateForBackend = (date) => {
         const year = date.getFullYear();
@@ -41,7 +43,7 @@ const BusForm = () => {
         },{
             headers: {
               'Content-Type': 'application/json',
-              'Authorization': 'Token ' + localStorage.getItem('authToken')
+              //'Authorization': 'Token ' + localStorage.getItem('authToken')
             }
           }).then(response => {
             setIsLoading(false);
@@ -60,13 +62,27 @@ const BusForm = () => {
           })
           .catch(error => {
             setIsLoading(false);
-            Swal.fire({
-                title: "Error",
-                text: error.response.data.message,
-                icon: "error",
-                iconColor: "#1ccda0",
-                confirmButtonColor: "#0da290",
-            });
+            if (error.response.status === 401) {
+                Swal.fire({
+                    title: "Sesión Expirada",
+                    text: "La sesión ha expirado. Inicie sesión nuevamente.",
+                    icon: "error",
+                    iconColor: "#1ccda0",
+                    confirmButtonColor: "#0da290",
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        navigate("/Login");
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: "Error",
+                    text: error.response.data.message,
+                    icon: "error",
+                    iconColor: "#1ccda0",
+                    confirmButtonColor: "#0da290",
+                });
+            }
           });
     };
 
