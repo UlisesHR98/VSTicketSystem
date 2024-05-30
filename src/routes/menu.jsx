@@ -3,12 +3,12 @@ import CardComponent from "../components/CardsComponent/CardComponent"
 import { IoTicketOutline, IoLogOut } from "react-icons/io5";
 import { FaBus, FaStoreAlt } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/HeaderComponent/HeaderComponent';
 import Modal from '../components/ModalComponent/ModalComponent';
 import { useState } from "react";
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
+import NavBar from "../components/NavBarComponent";
 
 const Menu = () => {
 
@@ -53,7 +53,7 @@ const Menu = () => {
 
   return (
     <div>
-      <Header title="Bienvenido" />
+      <NavBar></NavBar>
       <div className="cards-container">
         <CardComponent
           title="Buscar Salidas"

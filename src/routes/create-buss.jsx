@@ -3,13 +3,12 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'; // Importa los estilos por defecto
 import './create-buss.css';
 import axios from 'axios';
-import Header from '../components/HeaderComponent/HeaderComponent';
 import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenComponent';
 import Swal from 'sweetalert2';
 import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { TimePicker } from '@mui/x-date-pickers/TimePicker';
-import { useNavigate } from 'react-router-dom';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { TimePicker } from '@mui/x-date-pickers/TimePicker'
+import NavBar from "../components/NavBarComponent";
 
 const BusForm = () => {
     const [busName, setBusName] = useState('');
@@ -88,8 +87,8 @@ const BusForm = () => {
 
     return (
         <div>
+            <NavBar></NavBar>
             <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <Header title="Crear salida" useBackButton='true'/>
             <div className="form-container">
                 <form onSubmit={handleSubmit} className="form">
                     <label htmlFor="busName">Nombre del autobús</label>

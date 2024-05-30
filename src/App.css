@@ -45,3 +45,23 @@ body::before {
   z-index: 1;
   align-items: center;
 }
+
+.navItemsClass{
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10% !important;
+  padding-right: 10% !important;
+  padding-bottom: 3%;
+}
+
+.navItemsClass .nav-link.active {
+  color: black;
+  font-size:25px;
+}
+
+.navItemsClass .nav-link {
+  color: white;
+  font-size:20px;
+}

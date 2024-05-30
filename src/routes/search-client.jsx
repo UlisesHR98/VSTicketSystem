@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './search-client.css';
-import Header from '../components/HeaderComponent/HeaderComponent';
+import NavBar from "../components/NavBarComponent";
 
 const Client = () =>{
   const [nombre, setNombre] = useState('');
@@ -15,7 +15,7 @@ const Client = () =>{
 
   return (
     <div>
-      <Header title="Buscar cliente" useBackButton='true'/>
+      <NavBar></NavBar>
       <form className="form-busqueda" onSubmit={buscarPasajeros}>
         <label>Nombre del pasajero</label>
         <input

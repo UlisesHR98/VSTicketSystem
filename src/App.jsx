@@ -5,7 +5,7 @@ import Login from './routes/login';
 const App = () => {
 
   return (
-      <Login />
+    <Login />
   );
 };
 
