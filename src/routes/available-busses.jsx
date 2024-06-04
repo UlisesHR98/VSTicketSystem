@@ -13,7 +13,7 @@ const AvailableBusses = () => {
 
   const handleClick = (id) => {
     setIsLoading(true);
-    const apiUrl = `http://127.0.0.1:8000/VDSTicketApp/bus/${id}/get_available_seats/`
+    const apiUrl = `https://vds-app-vtreu.ondigitalocean.app/bus/${id}/get_available_seats/`
     axios.get(apiUrl, {
       headers:{
         'Content-Type': 'application/json',

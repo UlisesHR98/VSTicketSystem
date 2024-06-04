@@ -14,7 +14,7 @@ import LoadingScreen from '../components/LoadingScreenComponent/LoadingScreenCom
 const SeatSelector = () => {
   const { state: seats } = useLocation();
   const navigate = useNavigate();
-  const apiUrl = 'http://127.0.0.1:8000/VDSTicketApp/tickets/';
+  const apiUrl = 'https://vds-app-vtreu.ondigitalocean.app/tickets/';
 
   const [selectedSeats, setSelectedSeats] = useState([]);
   const handleSelectSeat = (seatId) => {
