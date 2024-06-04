@@ -30,10 +30,6 @@ const Login = () => {
       .then((response) => {
         localStorage.setItem("access_token", response.data.access);
         localStorage.setItem("refresh_token", response.data.refresh);
-        axios.defaults.headers.common[
-          "Authorization"
-        ] = `Bearer ${response.data["access"]}`;
-
         setIsLoading(false);
         navigate("/menu");
       })

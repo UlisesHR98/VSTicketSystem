@@ -10,6 +10,7 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { TimePicker } from "@mui/x-date-pickers/TimePicker";
 import { useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBarComponent";
+import axiosInstance from "../interceptors/axiosInstance";
 
 const BusForm = () => {
   const [busName, setBusName] = useState("");
@@ -35,9 +36,9 @@ const BusForm = () => {
     e.preventDefault();
     setIsLoading(true);
     const formattedDate = formatDateForBackend(tripDate);
-    axios
+    axiosInstance
       .post(
-        "https://vds-app-vtreu.ondigitalocean.app/bus/",
+        "/bus/",
         {
           bus_name: busName,
           date: formattedDate,
@@ -66,6 +67,7 @@ const BusForm = () => {
         setRoute("");
       })
       .catch((error) => {
+        debugger;
         setIsLoading(false);
         if (error.response.status === 401) {
           Swal.fire({
