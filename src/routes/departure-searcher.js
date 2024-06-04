@@ -15,7 +15,7 @@ const Departure = () => {
     desiredRoute: '',
   });
 
-  const apiUrl = 'http://127.0.0.1:8000/VDSTicketApp/bus/';
+  const apiUrl = 'https://vds-app-vtreu.ondigitalocean.app/bus/';
 
   const fetchDataOnClick = async () =>{
     if (!searchParams.travelDate || !searchParams.numberOfTickets || !searchParams.desiredRoute){
@@ -115,7 +115,6 @@ const Departure = () => {
         <button type="button" onClick={fetchDataOnClick}>Buscar Tickets</button>
       </form>
       {isLoading && <LoadingScreen/>}
-       
     </div>
   );
 };
