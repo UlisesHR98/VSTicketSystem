@@ -49,9 +49,8 @@ const NavBar = () => {
     return (
         <Navbar>
             <Nav variant="underline" defaultActiveKey={location.pathname} className="navItemsClass">
+                <Nav.Link href="/menu" >Inicio</Nav.Link>
                 <Nav.Link href="/departure-searcher" >Buscar Salidas</Nav.Link>
-                <Nav.Link href="/departure-searcher" >Buscar Salidas</Nav.Link>
-                <Nav.Link href="/customer-searcher" >Buscar Cliente</Nav.Link>
                 <Navbar.Brand href="/menu" >
                     <img
                         src='Logo.png'

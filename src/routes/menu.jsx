@@ -67,12 +67,6 @@ const Menu = () => {
           onClick={() => handleClick("/departure-searcher")}
         />
         <CardComponent
-          title="Buscar Cliente"
-          content="Buscar información de cliente con boleto comprado/apartado"
-          Icon={IoTicketOutline}
-          onClick={() => handleClick("/customer-searcher")}
-        />
-        <CardComponent
           title="Crear Salida"
           content="Agregar un autobus disponible para viajar en una fecha y destino específicos"
           Icon={FaStoreAlt}
